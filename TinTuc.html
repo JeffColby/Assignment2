@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Dancing Script' rel='stylesheet'>
+    <title>Tin tức</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        header{
+            display: flex;
+            position: fixed;
+            background-color: black;
+            width: 100%;
+            justify-content: space-between;
+            border-bottom: 1px solid black;
+            top: 0;
+        }
+        header a{
+            color: white;
+        }
+        .logo{
+            margin-left: 5%;
+            font-family: 'Dancing Script';
+        }
+        label{
+            display: none;
+        }
+        .menu{
+            display: flex;
+            margin-right: 5%;
+            width: 50%;
+        }
+        .pages{
+            display: flex;
+            padding-top: 15px;
+            width: 100%;
+            justify-content: space-between;
+        }
+        .pages a{
+            padding: 0 10px;
+        }
+        .pages a:hover{
+            text-decoration: underline;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        #home{
+            text-decoration: underline;
+        }
+
+        .footer{
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            background-color: black;
+        }
+        .footer p{
+            color: white;
+            margin: 0;
+        }
+        #right{
+            font-family: 'Dancing Script';
+        }
+
+        .content{
+            margin-top: 110px;
+        }
+        .post{
+            display: flex;
+            flex-wrap: wrap;
+            border-bottom: 1px solid rgb(225, 225, 225);
+            justify-content: space-around;
+            padding: 20px;
+        }
+        button{
+            width: 150px;
+            height: 50px;
+            background-color: black;
+            align-self: center;
+            border-radius: 15px;
+        }
+        button a{
+            color: white;
+        }
+        button:hover{
+            box-shadow: 5px 5px 20px 0 black;
+        }
+        img{
+            width: 300px;
+            height: 300px;
+            margin: 10px;
+        }
+        .text{
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            text-align: center;
+            margin: 10px;
+        }
+        .text h2{
+            margin: 0;
+            text-align: justify;
+            width: 90%;
+        }
+        .text p{
+            font-family: 'Dancing Script';
+            text-align: justify;
+            font-size: larger;
+            width: 90%;
+        }
+        #latest img{
+            width: 400px;
+            height: 400px;
+            border: 5px black solid;
+            border-radius: 40px;
+        }
+
+        .next{
+            text-align: center;
+            padding: 50px;
+            border-bottom: 1px solid black;
+        }
+        .next button {
+            width: 180px;
+            height: 60px;
+            border-radius: 25px;
+        }
+
+        @media screen and (max-width: 990px) {
+            header{
+                flex-direction: column;
+                border: none;
+            }
+            .menu, .logo{
+                width: 100%;
+            }
+            .logo{
+                text-align: center;
+                margin: 0;
+            }
+            .pages{
+                border-top: 1px solid white;
+                padding: 0 50px;
+            }
+
+            .content{
+                margin-top: 150px;
+            }
+            img, #latest img{
+                width: 200px;
+                height: 200px;
+                border: 5px black solid;
+                border-radius: 40px;
+                align-self: center;
+            }
+
+            .text h2, .text p{
+                align-self: center;
+            }
+            .text{
+                margin: 0;
+            }
+        }
+
+        @media screen and (max-width: 576px) {
+            label{
+                display: block;
+                padding-top: 15px;
+            }
+            .logo{
+                margin-left: 5%;
+            }
+            .pages{
+                display: none;
+                text-align: left;
+                border-bottom:none ;
+                margin-right: 10px;
+            }
+            header{
+                flex-direction: row;
+                border-bottom: 1px solid black;
+            }
+            .menu{
+                flex-direction: column;
+                text-align: right;
+            }
+            #menu:checked~.pages{
+                display: block;
+            }
+
+            .content{
+                margin-top: 100px;
+            }
+            .text{
+                width: 80%;
+                margin: 20px;
+            }
+            img, #latest img{
+                width: 250px;
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1><a href="Index.html">LangSonTravel.com</a></h1>
+        </div>
+
+        <div class="menu">
+            <input type="checkbox" id="menu" style="display: none;">
+            <label for="menu" style="color: white;"><h3>Menu</h3></label>
+
+            <div class="pages">
+                <h3><a href="Index.html">Trang chủ</a></h3>
+                <h3><a href="">Đặc sản</a></h3>
+                <h3><a href="">Địa điểm du lịch</a></h3>
+                <h3><a href="">Lịch sử</a></h3>
+                <h3><a href="TinTuc.html"  id="home">Tin tức</a></h3>
+                <h3><a href="LienHe.html">Liên hệ</a></h3>
+            </div>
+        </div>
+    </header>
+
+    <div class="content">
+        <div class="post" id="latest">
+            <img src="News/dac-san-lang-son-1-1024x610.webp" alt="">
+
+            <div class="text">
+                <h2>Những món ăn bạn nhất định phải thử khi đến Lạng Sơn</h2>
+                <p>Bạn sẽ không bao giờ hối hận khi ăn những món đặc sản nổi tiếng này !</p>
+                <button><a href="#">Xem chi tiết</a></button>
+            </div>
+        </div>
+
+        <div class="post">
+            <img src="News/full-length-image-young-asian-couple-travel-summer-vacation_296537-5936.avif" alt="">
+
+            <div class="text">
+                <h2>Nên đưa người yêu đi đâu khi lần đầu đến Lạng Sơn ?</h2>
+                <p>Nếu bạn đến Lạng Sơn lần đầu và đi cùng người yêu thì nhất định phải đọc hết bài viết này !</p>
+                <button><a href="#">Xem chi tiết</a></button>
+            </div>
+        </div>
+
+        <div class="post">
+            <img src="News/163448668.jpg" alt="">
+
+            <div class="text">
+                <h2>Có gì bên trong khách sạn Mường Thanh luxury Lạng Sơn ?</h2>
+                <p>Khách sạn Mường Thanh Luxury là khách sạn 4 sao lâu đời nhất ở thành phố Lạng Sơn. Hãy cùng tìm hiểu trong đó có gì trong bài viết này nhé !</p>
+                <button><a href="#">Xem chi tiết</a></button>
+            </div>
+        </div>
+
+        <div class="post">
+            <img src="News/banh-cuon-trung-lang-son-01_1631016338.jpg" alt="">
+
+            <div class="text">
+                <h2>Những món ăn bạn nhất định phải thử khi đến Lạng Sơn</h2>
+                <p>1 trong những đặc sản nổi tiếng của Lạng Sơn là bánh cuốn. Bánh cuốn nơi đây khác hẳn với bánh cuốn ở các tỉnh thành khác ! Nếu bạn đang phân vân có nên ăn món đặc sản này hay không thì đọc ngay bài viết này nhé !</p>
+                <button><a href="#">Xem chi tiết</a></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="next">
+        <button><a href="">Trang kế tiếp</a></button>
+    </div>
+
+    <div class="footer">
+        <p>Website thuộc sở hữu của Sở văn hóa thể thao và du lịch tỉnh Lạng Sơn</p>
+        <p id="right">Thiết kế bởi Nguyễn Trung Thành</p>
+    </div>
+</body>
+</html>

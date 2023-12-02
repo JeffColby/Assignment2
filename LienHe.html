@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Dancing Script' rel='stylesheet'>
+    <title>Liên hệ</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        header{
+            display: flex;
+            position: fixed;
+            background-color: black;
+            width: 100%;
+            justify-content: space-between;
+            border-bottom: 1px solid black;
+            top: 0;
+        }
+        header a{
+            color: white;
+        }
+        .logo{
+            margin-left: 5%;
+            font-family: 'Dancing Script';
+        }
+        label{
+            display: none;
+        }
+        .menu{
+            display: flex;
+            margin-right: 5%;
+            width: 50%;
+        }
+        .pages{
+            display: flex;
+            padding-top: 15px;
+            width: 100%;
+            justify-content: space-between;
+        }
+        .pages a{
+            padding: 0 10px;
+        }
+        .pages a:hover{
+            text-decoration: underline;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        #home{
+            text-decoration: underline;
+        }
+
+        .footer{
+            text-align: center;
+            margin: 30px 0 0 0;
+            padding: 20px;
+            background-color: black;
+        }
+        .footer p{
+            color: white;
+            margin: 0;
+        }
+        #right{
+            font-family: 'Dancing Script';
+        }
+
+        .content{
+            margin-top: 120px;
+            padding: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+            border: 1px solid black;
+            height: 350px;
+            margin: auto 0;
+            justify-content: space-between;
+            padding: 30px;
+            border-radius: 50px 0 0 50px;
+        }
+        button{
+            background-color: black;
+            color: white;
+            height: 40px;
+            width: 80px;
+            border-radius: 15px;            
+        }
+        button:hover{
+            cursor: pointer;
+            box-shadow: 5px 5px 20px 0 black;
+        }
+        input{
+            height: 30px;
+            border-radius: 10px;
+            border: 1px black solid;
+            padding-left: 20px;
+        }
+        textarea{
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .in4{
+            border: 1px solid black;
+            width: 40%;
+            background-color: black;
+            color: white;
+            padding: 30px;
+            border-radius: 0 50px 50px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .in4 h2{
+            text-align: center;
+            font-family: 'Dancing Script';
+            margin: 0;
+        }
+
+
+        @media screen and (max-width: 990px) {
+            header{
+                flex-direction: column;
+                border: none;
+            }
+            .menu, .logo{
+                width: 100%;
+            }
+            .logo{
+                text-align: center;
+                margin: 0;
+            }
+            .pages{
+                border-top: 1px solid white;
+                padding: 0 50px;
+            }
+
+            .content{
+                flex-direction: column-reverse;
+                align-items: center;
+                margin-top: 140px;
+            }
+            form, .in4{
+                width: 70%;
+            }
+            form{
+                border-radius: 0 0 50px 50px;
+            }
+            .in4{
+                border-radius: 50px 50px 0 0;
+            }
+            button{
+                align-self: center;
+            }
+        }
+
+        @media screen and (max-width: 576px) {
+            .logo{
+                margin-left: 5%;
+            }
+            label{
+                display: block;
+                padding-top: 15px;
+            }
+            .pages{
+                display: none;
+                text-align: left;
+                border-bottom:none ;
+            }
+            header{
+                flex-direction: row;
+                border-bottom: 1px solid black;
+            }
+            .menu{
+                flex-direction: column;
+                text-align: right;
+            }
+            #menu:checked~.pages{
+                display: block;
+            }
+
+            .content{
+                flex-direction: column;
+                align-items: center;
+                margin-top: 80px;
+            }
+            form, .in4{
+                width: 80%;
+            }
+            form{
+                border-radius: 50px 50px 0 0 ;
+            }
+            .in4{
+                border-radius:  0 0 50px 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1><a href="Index.html">LangSonTravel.com</a></h1>
+        </div>
+
+        <div class="menu">
+            <input type="checkbox" id="menu" style="display: none;">
+            <label for="menu" style="color: white;"><h3>Menu</h3></label>
+
+            <div class="pages">
+                <h3><a href="Index.html">Trang chủ</a></h3>
+                <h3><a href="">Đặc sản</a></h3>
+                <h3><a href="">Địa điểm du lịch</a></h3>
+                <h3><a href="">Lịch sử</a></h3>
+                <h3><a href="TinTuc.html">Tin tức</a></h3>
+                <h3><a href="LienHe.html"   id="home">Liên hệ</a></h3>
+            </div>
+        </div>
+    </header>
+
+    <div class="content">
+        <form>
+            <input type="text" placeholder="Họ tên" required>
+            <input type="text" placeholder="Số điện thoại" required>
+            <textarea cols="25" rows="10" placeholder="Nội dung" required></textarea>
+            <button type="submit">Gửi</button>
+        </form>
+
+        <div class="in4">
+            <h2>Thông tin liên hệ</h2>
+            <h3>Sở văn hóa thể thao và du lịch tỉnh Lạng Sơn</h3>
+            <li>320 đường Bà Triệu, phường Vĩnh Trại, thành phố Lạng Sơn, tỉnh Lạng Sơn</li>
+            <li>0205 3872 230</li>
+            <h3>Nguyễn Trung Thành</h3>
+            <li>thanhntph47592@fpt.edu.vn</li>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Website thuộc sở hữu của Sở văn hóa thể thao và du lịch tỉnh Lạng Sơn</p>
+        <p id="right">Thiết kế bởi Nguyễn Trung Thành</p>
+    </div>
+</body>
+</html>
